@@ -6,12 +6,14 @@ import "./App.css";
 import Article from "./components/article";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <section id="center">
-        <Article />
+        <Article
+          name="Hasan"
+          desc="Learn React with Hasan"
+          tags={["react", "javascript", "frontend", "web"]}
+        />
       </section>
     </>
   );
