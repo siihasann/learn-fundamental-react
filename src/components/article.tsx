@@ -4,12 +4,19 @@ type ArticleProps = {
   tags: string[];
 };
 
-function Article(props: ArticleProps) {
+type BlogProps = {
+  title: string;
+  desc: string;
+  tags: string[];
+  date: string;
+};
+function Article(props: BlogProps) {
   return (
     <>
-      {props.name}
+      <h2>{props.title}</h2>
       <p>{props.desc}</p>
       <p>{props.tags.join(", ")}</p>
+      <p>{props.date}</p>
       {/* {props.tags.map((tag) => {
         return <span>{tag}</span>;
       })} */}
