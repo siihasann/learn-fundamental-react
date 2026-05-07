@@ -1,9 +1,3 @@
-type ArticleProps = {
-  name: string;
-  desc: string;
-  tags: string[];
-};
-
 type BlogProps = {
   title: string;
   desc: string;
