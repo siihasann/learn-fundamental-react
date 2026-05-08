@@ -2,6 +2,7 @@ import { useState } from "react";
 
 interface SearchProps {
   onSearch: (value: string) => void;
+  totalPosts: number;
 }
 
 function Search(props: SearchProps) {
@@ -18,7 +19,9 @@ function Search(props: SearchProps) {
         <p>Search blog here:</p>
         <input type="text" onChange={handleSearch} />
       </div>
-      <small>mencari kata {search}</small>
+      <small>
+        mencari {props.totalPosts} data dengan kata {search}
+      </small>
     </>
   );
 }

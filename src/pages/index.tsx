@@ -5,18 +5,20 @@ import { useState } from "react";
 import Search from "../components/search-section";
 function Home() {
   const [data, setData] = useState(blogs);
+  const [totalPosts, setTotalPosts] = useState(0);
 
   const onSearchChange = (value: string) => {
     console.log("searching for", value);
 
     const filterBlogs = blogs.filter((item) => item.title.includes(value));
     setData(filterBlogs);
+    setTotalPosts(filterBlogs.length);
   };
 
   return (
     <>
       <h1>My Blog</h1>
-      <Search onSearch={onSearchChange} />
+      <Search onSearch={onSearchChange} totalPosts={totalPosts} />
       <div>
         {data.map(({ title, desc, tags, date }) => {
           return (
