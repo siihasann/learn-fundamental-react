@@ -20,10 +20,16 @@ function Home() {
       <h1>My Blog</h1>
       <Search onSearch={onSearchChange} totalPosts={totalPosts} />
       <div>
-        {data.map(({ title, desc, tags, date }) => {
+        {data.map(({ title, desc, tags, date, isNews }) => {
           return (
             <div key={title}>
-              <Article title={title} desc={desc} tags={tags} date={date} />
+              <Article
+                title={title}
+                desc={desc}
+                tags={tags}
+                date={date}
+                isNews={isNews}
+              />
               {/* <Article {...{ title, desc, tags, date }} /> */}
             </div>
           );

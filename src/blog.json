@@ -3,18 +3,21 @@
     "title": "Learn React with Hasan",
     "desc": "Learn React fundamental with Hasan",
     "tags": ["react", "javascript", "frontend", "web"],
-    "date": "2026-06-01"
+    "date": "2026-06-01",
+    "isNews": true
   },
   {
     "title": "Improve Website Performance with React",
     "desc": "Learn how to improve website performance with React",
     "tags": ["react", "javascript", "frontend", "web"],
-    "date": "2026-06-02"
+    "date": "2026-06-02",
+    "isNews": true
   },
   {
     "title": "Learn state management with React",
     "desc": "Learn how to manage state in React applications",
     "tags": ["react", "javascript", "frontend", "web"],
-    "date": "2026-06-03"
+    "date": "2026-06-03",
+    "isNews": false
   }
 ]
