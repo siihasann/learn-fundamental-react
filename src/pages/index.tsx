@@ -2,23 +2,23 @@ import type React from "react";
 import blogs from "../blog.json";
 import Article from "../components/article";
 import { useState } from "react";
+import Search from "../components/search-section";
 function Home() {
-  const [search, setSearch] = useState("");
+  const [data, setData] = useState(blogs);
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
-    setSearch(event.target.value);
+  const onSearchChange = (value: string) => {
+    console.log("searching for", value);
+
+    const filterBlogs = blogs.filter((item) => item.title.includes(value));
+    setData(filterBlogs);
   };
+
   return (
     <>
       <h1>My Blog</h1>
+      <Search onSearch={onSearchChange} />
       <div>
-        <p>Search blog here:</p>
-        <input type="text" onChange={handleSearch} />
-      </div>
-      <small>mencari kata {search}</small>
-      <div>
-        {blogs.map(({ title, tags, desc, date }) => {
+        {data.map(({ title, desc, tags, date }) => {
           return (
             <div key={title}>
               <Article title={title} desc={desc} tags={tags} date={date} />
